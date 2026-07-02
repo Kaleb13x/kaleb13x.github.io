@@ -759,3 +759,42 @@ center a:hover {
     transform: skewY(-2deg);
   }
 }
+
+/* ==========================================================================
+   10. INTERACTIVE AUDIO VISUALIZER EFFECT (PROGRESS TRACKS)
+   ========================================================================== */
+progress {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Connects the audio pulse animation to your existing neon progress values */
+progress::-webkit-progress-value {
+  animation: audioPulse 2.5s ease-in-out infinite alternate;
+}
+
+progress::-moz-progress-bar {
+  animation: audioPulse 2.5s ease-in-out infinite alternate;
+}
+
+/* Staggers the track frequencies so they don't bounce at the exact same time */
+li:nth-child(1) progress::-webkit-progress-value { animation-delay: 0.1s; animation-duration: 2s; }
+li:nth-child(2) progress::-webkit-progress-value { animation-delay: 0.4s; animation-duration: 2.8s; }
+li:nth-child(3) progress::-webkit-progress-value { animation-delay: 0.2s; animation-duration: 2.3s; }
+li:nth-child(4) progress::-webkit-progress-value { animation-delay: 0.6s; animation-duration: 3.1s; }
+
+li:nth-child(1) progress::-moz-progress-bar { animation-delay: 0.1s; animation-duration: 2s; }
+li:nth-child(2) progress::-moz-progress-bar { animation-delay: 0.4s; animation-duration: 2.8s; }
+li:nth-child(3) progress::-moz-progress-bar { animation-delay: 0.2s; animation-duration: 2.3s; }
+li:nth-child(4) progress::-moz-progress-bar { animation-delay: 0.6s; animation-duration: 3.1s; }
+
+@keyframes audioPulse {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 2px #00dfd8);
+  }
+  50% {
+    filter: brightness(1.4) drop-shadow(0 0 12px #ff007f);
+  }
+  100% {
+    filter: brightness(1.1) drop-shadow(0 0 6px #00dfd8);
+  }
+}
