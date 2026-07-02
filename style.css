@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. GLOBAL SYSTEM SETTINGS & AUDIO WAVE LAYER
+   1. GLOBAL SYSTEM SETTINGS & LIVE GRADIENT ANIMATION (VIDEO EFFECT)
    ========================================================================== */
 html {
   margin: 0;
@@ -8,157 +8,151 @@ html {
 }
 
 body {
-  font-family: "Impact", "Arial Black", sans-serif; /* Bold, punchy typography */
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   font-size: 16pt; 
-  background-color: #0b0c10; /* Vinyl record black */
+  /* Super vibrant bright cyber theme background */
+  background: linear-gradient(-45deg, #ff007f, #7928ca, #00dfd8, #ff007f);
+  background-size: 400% 400%;
+  animation: videoBackground 12s ease infinite; /* Moves continuously like a looping video */
   color: #ffffff;
   padding: 30px 20px;
   margin: 0;
   max-width: 900px;
   margin: 0 auto;
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* Street lighting & subtle bass equalizer visualizer effect */
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(rgba(11, 12, 16, 0.85), #0b0c10),
-    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(255, 255, 255, 0.03) 40px, rgba(255, 255, 255, 0.03) 80px);
-  z-index: -1;
-  pointer-events: none;
 }
 
 /* ==========================================================================
-   2. BOOMING ANIMATIONS & KEYFRAMES
+   2. HIGH-ENERGY EFFECTS & KEYFRAMES
    ========================================================================== */
-@keyframes bassDrop {
-  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255,255,255,0.1)); }
-  50% { transform: scale(1.03); filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.4)); }
+/* Looping video background simulation */
+@keyframes videoBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@keyframes trackSlide {
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateX(-50px);
+    transform: translateY(40px) scale(0.95);
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0) scale(1);
   }
 }
 
-@keyframes progressGlow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+@keyframes neonGlow {
+  0% { box-shadow: 0 0 10px #00dfd8, 0 0 20px rgba(0, 223, 216, 0.5); }
+  50% { box-shadow: 0 0 25px #ff007f, 0 0 40px rgba(255, 0, 127, 0.7); }
+  100% { box-shadow: 0 0 10px #00dfd8, 0 0 20px rgba(0, 223, 216, 0.5); }
+}
+
+@keyframes borderFlash {
+  0%, 100% { border-color: #00dfd8; }
+  50% { border-color: #ffbf00; }
 }
 
 /* ==========================================================================
-   3. "PARENTAL ADVISORY" CONTRAST CARDS
+   3. BRIGHT MODERNIZED CARDS
    ========================================================================== */
 .section {
-  background: #12141c; 
-  border: 4px solid #1f2330;
+  background: rgba(0, 0, 0, 0.75); /* Deep high-contrast dark backdrop */
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  border: 3px solid #00dfd8;
   padding: 35px;
   margin-bottom: 30px;
-  border-radius: 4px; /* Sharp, geometric street edges */
-  box-shadow: 10px 10px 0px #000000; /* Flat, heavy comic/graffiti shadow */
-  animation: trackSlide 0.5s ease-out both;
-  transition: all 0.25s ease-in-out;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .section:hover {
-  transform: translate(-4px, -4px);
-  border-color: #ffd700; /* Gold chain accent color */
-  box-shadow: 14px 14px 0px #000000;
+  transform: translateY(-8px) scale(1.02);
+  border-color: #ff007f;
+  box-shadow: 0 20px 40px rgba(255, 0, 127, 0.4);
 }
 
-/* Staggering the track entry lists */
-.section:nth-child(1) { animation-delay: 0.1s; }
-.section:nth-child(2) { animation-delay: 0.2s; }
-.section:nth-child(3) { animation-delay: 0.3s; }
-.section:nth-child(4) { animation-delay: 0.4s; }
+/* Staggered entrance timing */
+.section:nth-child(1) { animation-delay: 0.05s; }
+.section:nth-child(2) { animation-delay: 0.15s; }
+.section:nth-child(3) { animation-delay: 0.25s; }
+.section:nth-child(4) { animation-delay: 0.35s; }
 
 p {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  color: #cbd5e1;
-  font-size: 1.15rem;
-  line-height: 1.8;
-  letter-spacing: 0.3px;
+  color: #f1f5f9;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 /* ==========================================================================
-   4. BOOMBOX HERO HEADER CONFIGURATION
+   4. HERO HEADER CONFIGURATION
    ========================================================================== */
 #header {
-  background-image: linear-gradient(rgba(0,0,0,0.4), #12141c), url("https://media.giphy.com/media/KVZWZQoS0yqfIiTAKq/giphy.gif");
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url("https://media.giphy.com/media/KVZWZQoS0yqfIiTAKq/giphy.gif");
   background-size: cover;
   background-position: center;
-  border: 6px solid #ffffff;
-  padding: 60px 20px;
+  border: 4px solid #ffffff;
+  animation: borderFlash 4s infinite ease-in-out;
 }
 
 #header img {
   display: block;
-  width: 200px;
-  height: 200px;
+  width: 190px;
+  height: 190px;
   margin: 0 auto;
 }
 
 .img-circle {
-  border: 6px solid #12141c;
-  outline: 4px solid #ffffff;
+  border: 5px solid #ffffff;
   border-radius: 50%;
-  animation: bassDrop 2s infinite ease-in-out; /* Subtle pumping subwoofer animation */
+  animation: neonGlow 3s infinite ease-in-out;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#header img:hover {
+  transform: scale(1.15) rotate(5deg);
 }
 
 #header p {
-  font-size: 56pt;
+  font-size: 48pt;
   color: #ffffff;
-  padding-top: 20px;
+  padding-top: 15px;
   font-weight: 900;
   text-align: center;
-  letter-spacing: -2px;
-  text-transform: uppercase;
-  text-shadow: 5px 5px 0px #1f2330, 10px 10px 0px #000000;
+  letter-spacing: -1px;
+  text-shadow: 0 0 15px #ff007f, 0 0 30px #7928ca;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #ffffff;
-  text-align: left;
+  text-align: center;
   margin: 0 0 20px 0;
-  text-transform: uppercase;
-  letter-spacing: -0.5px;
 }
 
 h1 span {
-  background: #ffffff;
-  color: #000000;
-  padding: 4px 14px;
-  border-radius: 0;
-  font-weight: 900;
-  display: inline-block;
+  border: 3px solid #00dfd8;
+  background: rgba(0, 223, 216, 0.2);
+  padding: 8px 20px;
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(0, 223, 216, 0.4);
 }
 
 .quote {
-  font-family: "Impact", sans-serif;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 1.15rem;
+  font-style: italic;
   text-align: right;
-  margin-top: 20px;
-  color: #ffd700;
+  margin-top: 15px;
+  color: #00dfd8;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(0, 223, 216, 0.6);
 }
 
 /* ==========================================================================
-   5. INTERACTIVE MIXTAPE LINKS GRID
+   5. INTERACTIVE CONNECTIONS GRID
    ========================================================================== */
 #res {
   text-align: center;
@@ -166,177 +160,187 @@ h1 span {
 }
 
 #res a {
-  margin: 12px;
+  margin: 15px;
   display: inline-block;
   text-decoration: none;
   color: #ffffff;
-  background: #1a1d29;
-  border: 2px solid #2d3446;
-  padding: 16px 24px;
-  border-radius: 0;
-  min-width: 180px;
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 18px 28px;
+  border-radius: 20px;
+  min-width: 170px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 #res a:hover {
   background: #ffffff;
   color: #000000;
   border-color: #ffffff;
-  transform: scale(1.05);
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.5);
 }
 
 #res a img {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   margin-bottom: 8px;
-  filter: grayscale(100%) brightness(200%); /* Keeps icons cohesive with street look */
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
 }
 
 #res a:hover img {
-  transform: rotate(-5deg) scale(1.1);
-  filter: none; /* Brings back color on hover */
+  transform: scale(1.2);
 }
 
 .caption {
-  font-size: 0.95rem;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 }
 
 .selected {
-  background: #ffd700 !important;
-  border-color: #ffd700 !important;
-  color: #000000 !important;
+  background: #ff007f !important;
+  border-color: #ff007f !important;
+  color: white !important;
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.6) !important;
 }
 
 /* ==========================================================================
-   6. RECORD TRACK LEVELS (PROGRESS BARS)
+   6. NEON SKILLS TRACKS
    ========================================================================== */
 li {
-  font-family: "Impact", sans-serif;
-  margin-bottom: 30px;
-  text-transform: uppercase;
+  margin-bottom: 25px;
+  font-weight: 700;
   list-style: none;
   color: #ffffff;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   letter-spacing: 0.5px;
 }
 
 progress {
   width: 100%;
-  height: 20px;
-  background: #1a1d29;
-  border: 2px solid #2d3446;
-  border-radius: 0;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  border: none;
   margin-top: 10px;
   display: block;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
 }
 
 progress::-webkit-progress-bar {
-  background: #1a1d29;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
 }
 
 progress::-webkit-progress-value {
-  /* Dynamic multi-color gold gradient track bar */
-  background: linear-gradient(90deg, #b8860b, #ffd700, #ffffff);
-  background-size: 200% 100%;
+  background: linear-gradient(90deg, #00dfd8, #ff007f);
+  border-radius: 50px;
 }
 
 progress::-moz-progress-bar {
-  background: linear-gradient(90deg, #b8860b, #ffd700, #ffffff);
+  background: linear-gradient(90deg, #00dfd8, #ff007f);
+  border-radius: 50px;
 }
 
 /* ==========================================================================
-   7. SOCIAL PLATFORM TRACKS & INPUTS
+   7. SOCIAL PLATFORM STRIPS & CONNECTIONS
    ========================================================================== */
 #contacts {
   text-align: center;
+  padding: 20px;
 }
 
 #contacts img {
-  height: 58px; 
-  width: 58px;
-  margin: 0 10px;
-  filter: grayscale(100%) contrast(150%);
-  transition: all 0.2s ease;
+  height: 64px; 
+  width: 64px;
+  margin: 0 14px;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 #contacts img:hover {
-  filter: none;
-  transform: scale(1.2);
+  transform: scale(1.35) translateY(-6px);
+  filter: drop-shadow(0 10px 20px #00dfd8);
 }
 
 #insta-image {
   display: block;
   width: 110px;
   height: 110px;
-  border: 5px solid #ffffff;
+  border: 4px solid #ff007f;
   border-radius: 50%;
-  margin: -70px auto 20px auto;
-  box-shadow: 5px 5px 0px #000000;
+  margin: -65px auto 20px auto;
+  box-shadow: 0 8px 25px rgba(255, 0, 127, 0.5);
 }
 
+/* ==========================================================================
+   8. INPUT FIELD INTERACTION
+   ========================================================================== */
 input {
-  font-family: "Helvetica Neue", Arial, sans-serif;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #ffffff;
-  border: 3px solid #2d3446;
-  border-radius: 0;
-  padding: 16px 20px;
+  border: 2px solid #00dfd8;
+  border-radius: 50px;
+  padding: 16px 24px;
   width: 85%;
   max-width: 450px;
   margin: 15px auto;
-  background-color: #1a1d29;
-  transition: all 0.2s ease;
+  background: rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
   display: block;
+  box-shadow: 0 0 10px rgba(0, 223, 216, 0.1);
 }
 
 input:focus {
-  background-color: #ffffff;
-  color: #000000;
-  border-color: #ffffff;
+  background: #000000;
+  border-color: #ff007f;
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.5);
   outline: none;
 }
 
 /* ==========================================================================
-   8. MEDIA UTILITIES & FOOTER
+   9. MEDIA UTILITIES & FOOTER
    ========================================================================== */
 iframe, audio {
   display: block;
   margin: 25px auto;
-  border: 4px solid #ffffff;
-  border-radius: 0;
+  border: 3px solid #00dfd8;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,223,216,0.3);
 }
 
 hr {
   border: 0;
-  height: 3px;
-  background: #ffffff;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff007f, #00dfd8, transparent);
   margin: 50px 0;
 }
 
 center {
   font-size: 1.2rem;
-  text-transform: uppercase;
+  font-weight: bold;
 }
 
 center a {
-  color: #ffd700;
+  color: #00dfd8;
   text-decoration: none;
-  font-weight: 900;
+  text-shadow: 0 0 5px rgba(0,223,216,0.5);
+  transition: color 0.2s ease;
 }
 
 center a:hover {
-  color: #ffffff;
+  color: #ff007f;
+  text-shadow: 0 0 5px rgba(255,0,127,0.5);
 }
 
 .copyright {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-align: center;
   padding: 25px 0;
-  color: #4b5563;
+  color: #cbd5e1;
+  font-weight: 500;
 }
