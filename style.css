@@ -760,24 +760,25 @@ center a:hover {
   }
 }
 /* ==========================================================================
-   10. INTERACTIVE AUDIO VISUALIZER EFFECT (DIV/LI CHANNELS)
+   10. INTERACTIVE AUDIO VISUALIZER EFFECT (DIRECT DIV TARGETING)
    ========================================================================== */
-.section li {
+.section div:not(#header):not(#res):not(#contacts) {
   position: relative;
-  padding: 10px;
+  padding: 12px;
   border-left: 4px solid #00dfd8;
   background: rgba(255, 255, 255, 0.03);
   margin-bottom: 15px;
+  border-radius: 8px;
   transition: all 0.3s ease;
-  /* Attaches the audio pulsing effect directly to the skill row container */
+  /* Binds the equalizer pulse directly to the div cards */
   animation: audioPulse 2.5s ease-in-out infinite alternate;
 }
 
-/* Staggers the animation timing across your different skill rows */
-.section li:nth-child(1) { animation-delay: 0.1s; animation-duration: 2s; }
-.section li:nth-child(2) { animation-delay: 0.4s; animation-duration: 2.8s; }
-.section li:nth-child(3) { animation-delay: 0.2s; animation-duration: 2.3s; }
-.section li:nth-child(4) { animation-delay: 0.6s; animation-duration: 3.1s; }
+/* Independent staggered delays for the visualizer rows */
+.section div:nth-of-type(1) { animation-delay: 0.1s; animation-duration: 2s; }
+.section div:nth-of-type(2) { animation-delay: 0.4s; animation-duration: 2.8s; }
+.section div:nth-of-type(3) { animation-delay: 0.2s; animation-duration: 2.3s; }
+.section div:nth-of-type(4) { animation-delay: 0.6s; animation-duration: 3.1s; }
 
 @keyframes audioPulse {
   0% {
@@ -788,7 +789,7 @@ center a:hover {
   50% {
     border-color: #ff007f;
     box-shadow: 0 0 14px rgba(255, 0, 127, 0.4);
-    background: rgba(255, 0, 127, 0.05); /* Subtle pink flash inside the row */
+    background: rgba(255, 0, 127, 0.06);
   }
   100% {
     border-color: #00dfd8;
