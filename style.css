@@ -763,37 +763,46 @@ center a:hover {
    10. INTERACTIVE AUDIO VISUALIZER EFFECT (PROGRESS TRACKS)
    ========================================================================== */
 progress {
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 16px; /* Tells the browser how tall to make the animation bar */
+  background: rgba(255, 255, 255, 0.1); /* Creates the base track background */
+  border-radius: 50px;
+  border: none;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);[span_1](start_span)[span_1](end_span)
 }
 
 /* Connects the audio pulse animation to your existing neon progress values */
 progress::-webkit-progress-value {
-  animation: audioPulse 2.5s ease-in-out infinite alternate;
+  background: linear-gradient(90deg, #00dfd8, #ff007f); /* Reinforces the cyber colors */
+  animation: audioPulse 2.5s ease-in-out infinite alternate;[span_2](start_span)[span_2](end_span)
 }
 
 progress::-moz-progress-bar {
-  animation: audioPulse 2.5s ease-in-out infinite alternate;
+  background: linear-gradient(90deg, #00dfd8, #ff007f);
+  animation: audioPulse 2.5s ease-in-out infinite alternate;[span_3](start_span)[span_3](end_span)
 }
 
 /* Staggers the track frequencies so they don't bounce at the exact same time */
-li:nth-child(1) progress::-webkit-progress-value { animation-delay: 0.1s; animation-duration: 2s; }
-li:nth-child(2) progress::-webkit-progress-value { animation-delay: 0.4s; animation-duration: 2.8s; }
-li:nth-child(3) progress::-webkit-progress-value { animation-delay: 0.2s; animation-duration: 2.3s; }
-li:nth-child(4) progress::-webkit-progress-value { animation-delay: 0.6s; animation-duration: 3.1s; }
+li:nth-child(1) progress::-webkit-progress-value { animation-delay: 0.1s; animation-duration: 2s; }[span_4](start_span)[span_4](end_span)
+li:nth-child(2) progress::-webkit-progress-value { animation-delay: 0.4s; animation-duration: 2.8s; }[span_5](start_span)[span_5](end_span)
+li:nth-child(3) progress::-webkit-progress-value { animation-delay: 0.2s; animation-duration: 2.3s; }[span_6](start_span)[span_6](end_span)
+li:nth-child(4) progress::-webkit-progress-value { animation-delay: 0.6s; animation-duration: 3.1s; }[span_7](start_span)[span_7](end_span)
 
-li:nth-child(1) progress::-moz-progress-bar { animation-delay: 0.1s; animation-duration: 2s; }
-li:nth-child(2) progress::-moz-progress-bar { animation-delay: 0.4s; animation-duration: 2.8s; }
-li:nth-child(3) progress::-moz-progress-bar { animation-delay: 0.2s; animation-duration: 2.3s; }
-li:nth-child(4) progress::-moz-progress-bar { animation-delay: 0.6s; animation-duration: 3.1s; }
+li:nth-child(1) progress::-moz-progress-bar { animation-delay: 0.1s; animation-duration: 2s; }[span_8](start_span)[span_8](end_span)
+li:nth-child(2) progress::-moz-progress-bar { animation-delay: 0.4s; animation-duration: 2.8s; }[span_9](start_span)[span_9](end_span)
+li:nth-child(3) progress::-moz-progress-bar { animation-delay: 0.2s; animation-duration: 2.3s; }[span_10](start_span)[span_10](end_span)
+li:nth-child(4) progress::-moz-progress-bar { animation-delay: 0.6s; animation-duration: 3.1s; }[span_11](start_span)[span_11](end_span)
 
 @keyframes audioPulse {
   0% {
-    filter: brightness(1) drop-shadow(0 0 2px #00dfd8);
+    filter: brightness(1) drop-shadow(0 0 2px #00dfd8);[span_12](start_span)[span_12](end_span)
   }
   50% {
-    filter: brightness(1.4) drop-shadow(0 0 12px #ff007f);
+    filter: brightness(1.4) drop-shadow(0 0 12px #ff007f);[span_13](start_span)[span_13](end_span)
   }
   100% {
-    filter: brightness(1.1) drop-shadow(0 0 6px #00dfd8);
+    filter: brightness(1.1) drop-shadow(0 0 6px #00dfd8);[span_14](start_span)[span_14](end_span)
   }
 }
