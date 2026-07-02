@@ -7,52 +7,40 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  font-size: 16pt; 
-  /* Super vibrant bright cyber theme background */
-  background: linear-gradient(-45deg, #ff007f, #7928ca, #00dfd8, #ff007f);
-  background-size: 400% 400%;
-  animation: videoBackground 12s ease infinite; /* Moves continuously like a looping video */
-  color: #ffffff;
-  padding: 30px 20px;
-  margin: 0;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
 /* ==========================================================================
-   2. HIGH-ENERGY EFFECTS & KEYFRAMES
+   10. ETHIOPIAN FLAG WAVING EFFECT
    ========================================================================== */
-/* Looping video background simulation */
-@keyframes videoBackground {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.ethiopian-flag {
+  width: 100%;
+  height: 150px;
+  border-radius: 4px;
+  background: linear-gradient(
+    to bottom,
+    #078930 33.3%,
+    #fcd116 33.3%, 66.6%,
+    #da121a 66.6%
+  );
+  position: relative;
+  overflow: hidden;
+  animation: waveAnimation 6s ease-in-out infinite;
+  box-shadow: 5px 5px 0px #000000;
+  border: 4px solid #ffffff;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
+@keyframes waveAnimation {
+  0%, 100% {
+    background-position: 0% 0%;
+    transform: skewY(0deg);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  25% {
+    background-position: 100% 0%;
+    transform: skewY(2deg);
+  }
+  75% {
+    background-position: 50% 0%;
+    transform: skewY(-2deg);
   }
 }
-
-@keyframes neonGlow {
-  0% { box-shadow: 0 0 10px #00dfd8, 0 0 20px rgba(0, 223, 216, 0.5); }
-  50% { box-shadow: 0 0 25px #ff007f, 0 0 40px rgba(255, 0, 127, 0.7); }
-  100% { box-shadow: 0 0 10px #00dfd8, 0 0 20px rgba(0, 223, 216, 0.5); }
-}
-
-@keyframes borderFlash {
-  0%, 100% { border-color: #00dfd8; }
-  50% { border-color: #ffbf00; }
-}
-
 /* ==========================================================================
    3. BRIGHT MODERNIZED CARDS
    ========================================================================== */
