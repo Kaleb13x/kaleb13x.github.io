@@ -760,40 +760,45 @@ center a:hover {
   }
 }
 /* ==========================================================================
-   10. INTERACTIVE AUDIO VISUALIZER EFFECT (DIRECT DIV TARGETING)
+   10. HORIZONTAL AUDIO VISUALIZER BARS
    ========================================================================== */
-.section div:not(#header):not(#res):not(#contacts) {
-  position: relative;
-  padding: 12px;
-  border-left: 4px solid #00dfd8;
-  background: rgba(255, 255, 255, 0.03);
-  margin-bottom: 15px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  /* Binds the equalizer pulse directly to the div cards */
-  animation: audioPulse 2.5s ease-in-out infinite alternate;
+/* Apply this class to the inner div that represents the progress fill */
+.audio-bar-fill {
+  height: 16px;
+  border-radius: 50px;
+  background-image: 
+    linear-gradient(
+      90deg, 
+      #00dfd8 0%, 
+      #ff007f 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 0, 0, 0.4) 10px,
+      rgba(0, 0, 0, 0.4) 15px
+    );
+  background-blend-mode: overlay;
+  background-size: 100% 100%, 15px 100%;
+  animation: horizontalPulse 2.5s ease-in-out infinite alternate;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-/* Independent staggered delays for the visualizer rows */
-.section div:nth-of-type(1) { animation-delay: 0.1s; animation-duration: 2s; }
-.section div:nth-of-type(2) { animation-delay: 0.4s; animation-duration: 2.8s; }
-.section div:nth-of-type(3) { animation-delay: 0.2s; animation-duration: 2.3s; }
-.section div:nth-of-type(4) { animation-delay: 0.6s; animation-duration: 3.1s; }
+/* Stagger the pulse timings so they don't flash together */
+div:nth-of-type(1) > .audio-bar-fill { animation-delay: 0.1s; animation-duration: 2s; }
+div:nth-of-type(2) > .audio-bar-fill { animation-delay: 0.4s; animation-duration: 2.8s; }
+div:nth-of-type(3) > .audio-bar-fill { animation-delay: 0.2s; animation-duration: 2.3s; }
+div:nth-of-type(4) > .audio-bar-fill { animation-delay: 0.6s; animation-duration: 3.1s; }
 
-@keyframes audioPulse {
+@keyframes horizontalPulse {
   0% {
-    border-color: #00dfd8;
-    box-shadow: 0 0 4px rgba(0, 223, 216, 0.2);
-    background: rgba(255, 255, 255, 0.03);
+    filter: brightness(1) drop-shadow(0 0 4px rgba(0, 223, 216, 0.4));
   }
   50% {
-    border-color: #ff007f;
-    box-shadow: 0 0 14px rgba(255, 0, 127, 0.4);
-    background: rgba(255, 0, 127, 0.06);
+    filter: brightness(1.5) drop-shadow(0 0 12px rgba(255, 0, 127, 0.6));
   }
   100% {
-    border-color: #00dfd8;
-    box-shadow: 0 0 6px rgba(0, 223, 216, 0.3);
-    background: rgba(255, 255, 255, 0.03);
+    filter: brightness(1.1) drop-shadow(0 0 6px rgba(0, 223, 216, 0.5));
   }
 }
