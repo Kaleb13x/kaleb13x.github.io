@@ -344,3 +344,39 @@ center a:hover {
   color: #cbd5e1;
   font-weight: 500;
 }
+
+/* ==========================================================================
+   10. ETHIOPIAN FLAG WAVING EFFECT
+   ========================================================================== */
+.ethiopian-flag {
+  width: 100%;
+  height: 150px;
+  border-radius: 4px;
+  background: linear-gradient(
+    to bottom,
+    #078930 33.3%,
+    #fcd116 33.3%, 66.6%,
+    #da121a 66.6%
+  );
+  position: relative;
+  overflow: hidden;
+  animation: waveAnimation 6s ease-in-out infinite;
+  box-shadow: 5px 5px 0px #000000;
+  border: 4px solid #ffffff;
+}
+
+@keyframes waveAnimation {
+  0%, 100% {
+    background-position: 0% 0%;
+    transform: skewY(0deg);
+  }
+  25% {
+    background-position: 100% 0%;
+    transform: skewY(2deg);
+  }
+  75% {
+    background-position: 50% 0%;
+    transform: skewY(-2deg);
+  }
+}
+
