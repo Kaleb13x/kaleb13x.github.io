@@ -2,47 +2,131 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kaleb</title>
     <link rel="icon" href="https://raw.githubusercontent.com/CyberBoyAyush/Portfolio/master/profile.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div id="header" class="section">
-      <img alt="logo" class="img-circle" src="photo_2026-07-02_21-01-51.jpg">
-      <p>Kaleb</p>
-    </div>
 
-    <div class="section">
-      <h1><span>About Me</span></h1>
-      <p>
-        Hello there. As you may know, my name is Kaleb who currently lives in Addis Ababa, Ethiopia.
-        At the moment I am a university student who studies Management at Addis Ababa University.
-        I am passionate about coding, editing, or anything to do with electronics.
-        You can see my skills below and contact me if you would like!
-      </p>
-      <p class="quote">~ Kaleb</p>
-    </div>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <img alt="Kaleb" class="avatar" src="photo_2026-07-02_21-01-51.jpg">
+      <h1 class="name">Kaleb</h1>
+      <p class="tagline">Management student in Addis Ababa &mdash; building things with code and circuits</p>
+      <div class="hero-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#connect">Connect</a>
+      </div>
+    </section>
 
-    <div class="section" id="res">
-      <h1><span>My Social Media Accounts</span></h1>
-      <a href="https://t.me/martian77">
-        <img src="https://img.icons8.com/nolan/144/telegram-app.png" alt="Telegram">
-        <div class="caption">Telegram Account</div>
-      </a>
-      <a href="https://github.com/Kaleb13x">
-        <img src="https://img.icons8.com/nolan/144/github.png" alt="GitHub">
-        <div class="caption">Github Account</div>
-      </a>
-      <a href="https://kaleb13x.github.io">
-        <img src="https://img.icons8.com/dusk/144/000000/domain.png" alt="Website">
-        <div class="caption">My Website</div>
-      </a>
-      <br>
-      <p style="text-align: center;"><strong>Resources I Use</strong></p>
-      <a href="https://github.com/">
-        <img src="https://img.icons8.com/nolan/144/github.png" alt="GitHub">
-        <div class="caption">Github</div>
-      </a>
-      <a href="https://telegram.me">
-        <img src="https://img.icons8.com/nolan/144/telegram-app.png" alt="Telegram">
+    <main>
+      <!-- About -->
+      <section class="card" id="about">
+        <h2>About</h2>
+        <p>
+          Hello there &mdash; my name is Kaleb and I currently live in Addis Ababa, Ethiopia.
+          I'm a university student studying Management at Addis Ababa University, and outside
+          of class I'm into coding, editing, and anything to do with electronics.
+          Take a look at my skills below, and reach out if you'd like to connect.
+        </p>
+        <p class="quote">&mdash; Kaleb</p>
+      </section>
+
+      <!-- Accounts -->
+      <section class="card">
+        <h2>Find Me Online</h2>
+        <div class="link-grid">
+          <a href="https://t.me/martian77" class="link-tile">
+            <img src="https://img.icons8.com/nolan/144/telegram-app.png" alt="Telegram">
+            <span>Telegram</span>
+          </a>
+          <a href="https://github.com/Kaleb13x" class="link-tile">
+            <img src="https://img.icons8.com/nolan/144/github.png" alt="GitHub">
+            <span>GitHub</span>
+          </a>
+          <a href="https://kaleb13x.github.io" class="link-tile">
+            <img src="https://img.icons8.com/dusk/144/000000/domain.png" alt="Website">
+            <span>Website</span>
+          </a>
+        </div>
+
+        <h3>Tools I Use</h3>
+        <div class="link-grid">
+          <a href="https://github.com/" class="link-tile">
+            <img src="https://img.icons8.com/nolan/144/github.png" alt="GitHub">
+            <span>GitHub</span>
+          </a>
+          <a href="https://telegram.me" class="link-tile">
+            <img src="https://img.icons8.com/nolan/144/telegram-app.png" alt="Telegram">
+            <span>Telegram</span>
+          </a>
+          <a href="https://termux.com/" class="link-tile">
+            <img src="https://img.icons8.com/nolan/144/pos-terminal.png" alt="Termux">
+            <span>Termux</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="card" id="skills">
+        <h2>Skills</h2>
+        <ul class="skill-list">
+          <li>
+            <div class="skill-head"><span>Logo Making</span><span class="skill-pct">95%</span></div>
+            <progress min="0" max="100" value="95"></progress>
+          </li>
+          <li>
+            <div class="skill-head"><span>Hardware Repair</span><span class="skill-pct">99%</span></div>
+            <progress min="0" max="100" value="99"></progress>
+          </li>
+          <li>
+            <div class="skill-head"><span>Termux</span><span class="skill-pct">80%</span></div>
+            <progress min="0" max="100" value="80"></progress>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Social -->
+      <section class="card" id="connect">
+        <h2>Follow Me</h2>
+        <div class="social-row">
+          <a href="https://instagram.com/kaleb13x" target="_blank" aria-label="Instagram">
+            <img src="https://img.icons8.com/cute-clipart/100/instagram-new.png" alt="Instagram">
+          </a>
+          <a href="https://github.com/kaleb13x" aria-label="GitHub">
+            <img src="https://img.icons8.com/nolan/144/github.png" alt="GitHub">
+          </a>
+          <a href="https://t.me/kaleb13x" aria-label="Telegram">
+            <img src="https://img.icons8.com/fluent/96/000000/telegram-app.png" alt="Telegram">
+          </a>
+          <a href="https://www.facebook.com/kaleb13x" aria-label="Facebook">
+            <img src="https://img.icons8.com/color/96/000000/facebook.png" alt="Facebook">
+          </a>
+          <a href="mailto:kaleb13x@gmail.com" aria-label="Email">
+            <img src="https://img.icons8.com/fluent/96/000000/gmail.png" alt="Email">
+          </a>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="card contact-card">
+        <h2>Get In Touch</h2>
+        <a class="contact-button" href="https://mail.google.com/mail/?view=cm&fs=1&to=kaleb13x@gmail.com">
+          <img src="https://img.icons8.com/fluent/95/000000/gmail--v2.png" alt="">
+          Email Me
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made by <a href="https://github.com/kaleb13x">Kaleb</a></p>
+      <div class="copyright">&copy; Kaleb</div>
+    </footer>
+
+  </body>
+</html>
